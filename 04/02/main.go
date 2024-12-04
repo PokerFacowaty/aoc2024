@@ -15,7 +15,10 @@ func countXDashMas(board [][]string) int {
 				continue
 			}
 
-			if (board[i-1][j-1] == "M" && board[i+1][j+1] == "S" || board[i-1][j-1] == "S" && board[i+1][j+1] == "M") && (board[i+1][j-1] == "M" && board[i-1][j+1] == "S" || board[i+1][j-1] == "S" && board[i-1][j+1] == "M") {
+			if (board[i-1][j-1] == "M" && board[i+1][j+1] == "S" ||
+				board[i-1][j-1] == "S" && board[i+1][j+1] == "M") &&
+				(board[i+1][j-1] == "M" && board[i-1][j+1] == "S" ||
+					board[i+1][j-1] == "S" && board[i-1][j+1] == "M") {
 				count++
 			}
 
