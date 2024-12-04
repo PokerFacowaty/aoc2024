@@ -21,41 +21,41 @@ func countXmas(board [][]string) int {
 			leftPossible := j > 2
 			rightPossible := (len(board[i]) - j) > 3
 
-            if leftPossible {
+			if leftPossible {
 				fields := []string{board[i][j], board[i][j-1], board[i][j-2], board[i][j-3]}
 				toCheck = append(toCheck, fields)
-            }
+			}
 
-            if rightPossible {
+			if rightPossible {
 				fields := []string{board[i][j], board[i][j+1], board[i][j+2], board[i][j+3]}
 				toCheck = append(toCheck, fields)
-            }
+			}
 
-            if topPossible {
+			if topPossible {
 				fields := []string{board[i][j], board[i-1][j], board[i-2][j], board[i-3][j]}
 				toCheck = append(toCheck, fields)
-                if leftPossible {
-                    fields := []string{board[i][j], board[i-1][j-1], board[i-2][j-2], board[i-3][j-3]}
-                    toCheck = append(toCheck, fields)
-                }
-                if rightPossible {
-                    fields := []string{board[i][j], board[i-1][j+1], board[i-2][j+2], board[i-3][j+3]}
-                    toCheck = append(toCheck, fields)
-                }
-            }
+				if leftPossible {
+					fields := []string{board[i][j], board[i-1][j-1], board[i-2][j-2], board[i-3][j-3]}
+					toCheck = append(toCheck, fields)
+				}
+				if rightPossible {
+					fields := []string{board[i][j], board[i-1][j+1], board[i-2][j+2], board[i-3][j+3]}
+					toCheck = append(toCheck, fields)
+				}
+			}
 
-            if botPossible {
+			if botPossible {
 				fields := []string{board[i][j], board[i+1][j], board[i+2][j], board[i+3][j]}
 				toCheck = append(toCheck, fields)
-                if leftPossible {
-                    fields := []string{board[i][j], board[i+1][j-1], board[i+2][j-2], board[i+3][j-3]}
-                    toCheck = append(toCheck, fields)
-                }
-                if rightPossible {
-                    fields := []string{board[i][j], board[i+1][j+1], board[i+2][j+2], board[i+3][j+3]}
-                    toCheck = append(toCheck, fields)
-                }
-            }
+				if leftPossible {
+					fields := []string{board[i][j], board[i+1][j-1], board[i+2][j-2], board[i+3][j-3]}
+					toCheck = append(toCheck, fields)
+				}
+				if rightPossible {
+					fields := []string{board[i][j], board[i+1][j+1], board[i+2][j+2], board[i+3][j+3]}
+					toCheck = append(toCheck, fields)
+				}
+			}
 		}
 	}
 
